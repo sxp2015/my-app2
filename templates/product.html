@@ -1,0 +1,197 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<script>
+$(function (){
+    $("#product").addClass("header-hover")
+})
+</script>
+<!--banner-->
+<section class="read-banner-wrap header-top">
+    <div class="read-banner-img data1" data-src="http://www.filtemc.com/uploads/img/20190626/5d12dcaa53167.jpg"></div>
+    <div class="read-banner-text">
+        <div class="width-auto">
+            <span class="en2 text-en wow fadeInLeft2 d2">PRODUCTS</span>
+            <span class="wow fadeInLeft2 d3">产品中心</span>
+        </div>
+    </div>
+</section>
+
+<!--content-->
+
+
+
+		<div class="cp_box2">
+{#			<div class="fsgl_t">SOCOMEC开关</div>#}
+			<div class="fsgl_b">
+				<ul>
+                    {% for categ in category %}
+					<li class="wow driveInBottom" style="visibility: visible; animation-name: driveInBottom;">
+						<div class="conew">
+							<dl>
+								<dt><img src="{{ categ.img.url }}" alt=""></dt>
+								<dd>
+									<h1>{{ categ.name }}</h1>
+                                    <p>
+										{{ categ.desc }}
+									</p>
+								</dd>
+							</dl>
+						</div>
+						<div class="uin">
+							<ul>
+                                {% for good in goods %}
+                                    {% if good.category.name ==  categ.name %}
+								<li class="l2">
+                                    <a href="#">
+                                        {{ good.goods_name }}
+                                    </a>
+									<div class="tyu2">
+										<dl>
+{#											<a#}
+{#												href="#">#}
+												<dt><img src="{{ good.goods_img.url }}" alt=""></dt>
+												<dd>
+													<h1>{{ good.goods_name }}</h1>
+													<p>
+														{{ good.goods_desc }}
+													</p>
+                                                    <a style="color: #0000cc;" href="/media/{{ good.goods_file }}">下载</a>
+												</dd>
+
+{#											</a>#}
+										</dl>
+									</div>
+								</li>
+                                    {% endif %}
+                                {% endfor %}
+							</ul>
+
+						</div>
+
+					</li>
+
+                    {% endfor %}
+
+
+
+{#                    <li class="wow driveInBottom" style="visibility: visible; animation-name: driveInBottom;">#}
+{#						<div class="conew">#}
+{#							<dl>#}
+{#								<dt><img src="./北京光华世通科技有限公司_files/5c9b2e19c78a9.png" alt=""></dt>#}
+{#								<dd>#}
+{#									<h1>转换开关</h1>#}
+{#									<p></p>#}
+{#									<p>#}
+{#										可用于：#}
+{#									</p>#}
+{#									<p>#}
+{#										工业（马达控制）#}
+{#									</p>#}
+{#									<p>#}
+{#										用在：#}
+{#									</p>#}
+{#									<p>#}
+{#										高层建筑、数据中心、医疗保健建筑、银行与保险、交通#}
+{#									</p>#}
+{#									<p></p>#}
+{#								</dd>#}
+{#							</dl>#}
+{#						</div>#}
+{#						<div class="uin">#}
+{#							<ul>#}
+{#								<li class="l2"><a#}
+{#										href="http://www.greencentury.cn/index.php?s=/Home/article/detail/id/72.html">手动转换开关COMO#}
+{#										C</a>#}
+{#									<div class="tyu2">#}
+{#										<dl>#}
+{#											<a#}
+{#												href="http://www.greencentury.cn/index.php?s=/Home/article/detail/id/72.html">#}
+{##}
+{#												<dt><img src="./北京光华世通科技有限公司_files/5c9b2d25a45b9.png" alt=""></dt>#}
+{##}
+{#												<dd>#}
+{##}
+{#													<h1>手动转换开关COMO C</h1>#}
+{##}
+{#													<p></p>#}
+{#													<p>#}
+{#														25-100A#}
+{#													</p>#}
+{#													<p>#}
+{#														符合标准#}
+{#													</p>#}
+{#													<p>#}
+{#														IEC60947-3、UL508#}
+{#													</p>#}
+{#													<p></p>#}
+{##}
+{#												</dd>#}
+{##}
+{#											</a>#}
+{##}
+{#										</dl>#}
+{##}
+{#									</div>#}
+{##}
+{#								</li>#}
+{#								<li class="l2"><a#}
+{#										href="http://www.greencentury.cn/index.php?s=/Home/article/detail/id/73.html">电动或自动转换开关</a>#}
+{##}
+{#									<div class="tyu2">#}
+{##}
+{#										<dl>#}
+{##}
+{#											<a#}
+{#												href="http://www.greencentury.cn/index.php?s=/Home/article/detail/id/73.html">#}
+{##}
+{#												<dt><img src="./北京光华世通科技有限公司_files/5c9b2d83038bb.png" alt=""></dt>#}
+{##}
+{#												<dd>#}
+{##}
+{#													<h1>电动或自动转换开关</h1>#}
+{##}
+{#													<p></p>#}
+{#													<p>#}
+{#														<span>40-160A</span>#}
+{#													</p>#}
+{#													<p>#}
+{#														<span>符合标准</span>#}
+{#													</p>#}
+{#													<p>#}
+{#														<span>IEC60947-3、GB14048.11</span>#}
+{#													</p>#}
+{#													<p></p>#}
+{##}
+{#												</dd>#}
+{##}
+{#											</a>#}
+{#										</dl>#}
+{#									</div>#}
+{#								</li>#}
+{#							</ul>#}
+{#						</div>#}
+{#					</li>#}
+				</ul>
+			</div>
+		</div>
+
+{##}
+{#<section class="advert-index-wrap">#}
+{#    <div class="advert-img">#}
+{#        <span class="data3 wow fadeInUp d2" data-src="/uploads/img/20190627/5d14404d3aa71.png"></span>#}
+{#    </div>#}
+{#    <div class="advert-index-box">#}
+{#        <div class="advert-title wow fadeInUp d3">为客户提供满意的技术解决方案</div>#}
+{#        <div class="advert-text wow fadeInUp d4">保证快速灵活的产品交期，秉承直至客户满意为止并且始终如一的服务态度</div>#}
+{#    </div>#}
+{#</section>#}
+
+
+<!--回到顶部-->
+<section class="return-top" id="top"></section>
+{% endblock %}

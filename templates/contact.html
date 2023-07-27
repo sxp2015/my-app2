@@ -1,0 +1,193 @@
+
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<script type="text/javascript">
+    $(function () {
+        IqwXiongJs.maoAnimate();
+        IqwXiongJs.IsMap();
+        $("#contact").addClass('header-hover')
+    })
+</script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&amp;ak=whbVh8FvRmW2leSQIFOuMn9NcCAuGFvM"></script>
+<!--banner-->
+<section class="read-banner-wrap header-top">
+    {% for contact in contacts %}
+    <div class="read-banner-img data1" data-src="{{ contact.photo.url }}"></div>
+    <div class="read-banner-text">
+        <div class="width-auto">
+            <span class="en2 text-en wow fadeInLeft2 d2">{{ contact.title_en }}</span>
+            <span class="wow fadeInLeft2 d3">{{ contact.title }}</span>
+        </div>
+    </div>
+    {% endfor %}
+
+</section>
+<!--nav-->
+<div class="read-nav-box">
+    <section class="read-nav wow fadeInUp d2">
+        <div class="width-auto">
+            <ul>
+                <li>
+                    <a class="about-mao" href="contact.html#contactmethod">联系方式</a>
+                </li>
+                <li>
+                    <a class="about-mao" href="contact.html#talent">人才理念</a>
+                </li>
+                <li>
+                    <a class="about-mao" href="contact.html#join">加入我们</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>
+<!--联系方式-->
+<section class="read-about read-about1" id="contactmethod">
+    <div class="width-auto">
+        <div class="index-title">
+            <span class="en2 text-en wow fadeInUp d2">CONTACT INFORMATION</span>
+            <span class="wow fadeInUp d3">联系方式</span>
+        </div>
+        <div class="contact-manner">
+            <div class="manner-left wow fadeInLeft d4">
+                {% for contactMethod in contactMethods %}
+                <div class="manner-title">{{ contactMethod.title }}</div>
+                <div class="manner-text">
+                    <div class="manner-icon">
+                        <span class="iconfont icon-dianhua"></span>
+                        <span>
+                            电话：
+                                {{ contactMethod.tel }}
+{#                            <a href="tel:+86-531-58622888">+86-531-58622888</a>/#}
+{#                            <a href="tel:58622889">58622889</a>/#}
+{#                            <a href="tel:58622890">58622890</a>                            #}
+                            <br/>
+                            技术部电话 :
+                                {{ contactMethod.tel1 }}
+{#                            <a href="tel:+86-531-58622887">+86-531-58622887</a>                            #}
+                            <br/>
+                            24h服务电话 :
+{#                            <a href="tel:+86-13905317690">+86-13905317690</a>#}
+                                {{ contactMethod.tel2 }}
+                        </span>
+                    </div>
+                    <div class="manner-icon">
+                        <span class="iconfont icon-QQ"></span>
+                        <span>
+                            技术部 QQ：{{ contactMethod.qq1 }}
+{#                            <a href="tencent://message/?Menu=yes&uin=507982518">507982518</a>#}
+
+                            销售部QQ：{{ contactMethod.qq2 }}
+{#                            <a href="tencent://message/?Menu=yes&uin=1879432718">1879432718</a>#}
+                        </span>
+
+                    </div>
+                    <div class="manner-icon">
+                        <span class="iconfont icon-youjian"></span>
+                        <span>
+                            邮箱：<a href="{{ contactMethod }}">{{ contactMethod.email }}</a>
+                        </span>
+                    </div>
+                    <div class="manner-icon">
+                        <span class="iconfont icon-wangzhan"></span>
+                        <span>
+                            网址：<a href="{{ contactMethod.url }}">{{ contactMethod.url }}</a>
+                        </span>
+                    </div>
+                    <div class="manner-icon">
+                        <span class="iconfont icon-dizhi"></span>
+                        <span>
+                            地址：{{ contactMethod.address }}
+                        </span>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+            <div class="manner-right wow fadeInRight d4">
+                <div class="contact-map" id="allmap"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--人才理念-->
+<section class="read-about people-wrap" id="talent">
+    <div class="width-auto">
+        <div class="index-title">
+            <span class="en2 text-en wow fadeInUp d2">TALENT CONCEPT</span>
+            <span class="wow fadeInUp d3">人才理念</span>
+        </div>
+
+        {% for talentConcept in talentConcepts %}
+        <div class="people-text wow fadeInUp d4">
+           {{ talentConcept.title }}
+        </div>
+        <div class="peo-list wow fadeInUp d5">
+            <div class="peo-box">
+                <div class="peo-img data3" data-src="{{ talentConcept.photo1.url }}"></div>
+                <div class="peo-title">{{ talentConcept.name1 }}</div>
+                <div class="peo-text">{{ talentConcept.title1 }}</div>
+            </div>
+            <div class="peo-box">
+                <div class="peo-img data3" data-src="{{ talentConcept.photo2.url }}"></div>
+                <div class="peo-title">{{ talentConcept.name2 }}</div>
+                <div class="peo-text">{{ talentConcept.title2 }}</div>
+            </div>
+            <div class="peo-box">
+                <div class="peo-img data3" data-src="{{ talentConcept.photo3.url }}"></div>
+                <div class="peo-title">{{ talentConcept.name3 }}</div>
+                <div class="peo-text">{{ talentConcept.title3 }}</div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</section>
+<!--加入我们-->
+<section class="read-about join-wrap" id="join">
+    <div class="width-auto">
+        <div class="index-title">
+            <span class="en2 text-en wow fadeInUp d2">JOIN US</span>
+            <span class="wow fadeInUp d3">加入我们</span>
+        </div>
+
+        <div class="join-list wow fadeInUp d4">
+            <div class="join-title">
+                <span>职位名称</span>
+                <span>工作地点</span>
+                <span>发布时间</span>
+                <span>操作</span>
+            </div>
+            <div class="join-ul">
+
+                {% for job in jobs %}
+                <div class="join-li">
+                    <div class="join-top">
+                        <div class="join-read space-over">{{ job.jobname }}</div>
+                        <div class="join-read space-over">{{ job.address }}</div>
+                        <div class="join-read space-over">{{ job.publishDate|date:"Y-m-d" }}</div>
+                        <div class="join-read space-over">
+                            <span>-</span>
+                        </div>
+                    </div>
+                    <div class="join-bottom">
+                        <pre>{{ job.content }}</pre>
+                    </div>
+                </div>
+                {% endfor %}
+                <script>
+                    $(function (){
+                        $('.join-li').find('span').html('+')
+                        $('.join-li:eq(0)').addClass('join-down').find('span').html('-')
+                        $('.join-li:eq(0)').children('.join-top').addClass('join-blue')
+                    })
+                </script>
+            </div>
+        </div>
+    </div>
+</section>
+<!--回到顶部-->
+<section class="return-top" id="top"></section>
+{% endblock %}

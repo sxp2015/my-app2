@@ -1,0 +1,297 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<script type="text/javascript">
+    $(function () {
+        IqwXiongJs.maoAnimate();
+        $("#about").addClass('header-hover')
+    })
+</script>
+<!--banner-->
+<section class="read-banner-wrap header-top">
+    {% for company in companys %}
+    <div class="read-banner-img data1" data-src="{{ company.photo1.url }}"></div>
+    {% endfor %}
+    <div class="read-banner-text">
+        <div class="width-auto">
+            <span class="en2 text-en wow fadeInLeft2 d2">ABOUT US</span>
+            <span class="wow fadeInLeft2 d3">关于我们</span>
+        </div>
+    </div>
+</section>
+
+<!--nav-->
+<div class="read-nav-box">
+    <section class="read-nav wow fadeInUp d2">
+        <div class="width-auto">
+            <ul>
+                <li><a class="about-mao" href="/about.html#company">公司简介</a></li>
+                <li><a class="about-mao" href="/about.html#develop">发展历程</a></li>
+                <li><a class="about-mao" href="/about.html#honor">荣誉资质</a></li>
+                <li><a class="about-mao" href="/about.html#vision">使命与愿景</a></li>
+            </ul>
+        </div>
+    </section>
+</div>
+<!--公司简介开始处-->
+<section class="read-about read-about1" id="company">
+    <div class="width-auto">
+        <div class="index-title">
+            <span class="en2 text-en wow fadeInUp d2">COMPANY PROFILE</span>
+            <span class="wow fadeInUp d3">公司简介</span>
+        </div>
+        <div class="about-jj-text wow fadeInUp d4">
+            {% for company in companys %}
+             <p>{{ company.description }}</p>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="about-jj-img wow fadeInUp d5">
+        {#   简介广告图片     #}
+        {% for company in companys %}
+         <span class="data3" data-src="{{ company.photo0.url }}"></span>
+        {% endfor %}
+
+    </div>
+
+</section>
+<!--公司简介结束处-->
+
+<!--公司简介开始处-->
+
+<!--发展历程开始处-->
+<section class="read-about read-about2" id="develop">
+    <div class="width-auto">
+        <div class="index-title">
+            <span class="en2 text-en wow fadeInUp d2">DEVELOPMENT PATH</span>
+            <span class="wow fadeInUp d3">发展历程</span>
+        </div>
+        <div class="swiper-fz-wrap">
+            <div class="swiper-container swiper-no-swiping fz-about-swiper">
+                <div class="swiper-wrapper">
+
+                    {% for item in developmentHistorys %}
+                    <div class="swiper-slide">
+                        <div class="swiper-fz-year">{{ item.year }} 年</div>
+                        <div class="swiper-fz-light"></div>
+                        <div class="swiper-fz-read">
+                            <div class="swiper-fz-text">
+                                <div class="swiper-fz-span">
+                                    <span>{{ item.year }}</span><i></i>
+                                </div>
+                                <div class="swiper-fz-span">
+                                    {{ item.description }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+{#                    <div class="swiper-slide">#}
+{#                        <div class="swiper-fz-year">2019年</div>#}
+{#                        <div class="swiper-fz-light"></div>#}
+{#                        <div class="swiper-fz-read">#}
+{#                            <div class="swiper-fz-text">#}
+{#                                <div class="swiper-fz-span">#}
+{#                                    <span>2019</span><i></i>#}
+{#                                </div>#}
+{#                                <div class="swiper-fz-span">#}
+{#                                    济南菲奥特全新VI标志和官网改版，全新的品牌形象升级，让公司发展更上一层楼#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+
+{#                    <div class="swiper-slide">#}
+{#                        <div class="swiper-fz-year">2018-2016年</div>#}
+{#                        <div class="swiper-fz-light"></div>#}
+{#                        <div class="swiper-fz-read">#}
+{#                            <div class="swiper-fz-text">#}
+{#                                <div class="swiper-fz-span">#}
+{#                                    <span>2018</span><i></i>#}
+{#                                </div>#}
+{#                                <div class="swiper-fz-span">#}
+{#                                    济南菲奥特滤波器全系通过TUV认证，公司一直以来坚持的高标准、高要求的质量安全思想#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="swiper-fz-text">#}
+{#                                <div class="swiper-fz-span">#}
+{#                                    <span>2017</span><i></i>#}
+{#                                </div>#}
+{#                                <div class="swiper-fz-span">#}
+{#                                    公司通过ISO:9001、ISO:14000、ISO:18000三体系认证#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="swiper-fz-text">#}
+{#                                <div class="swiper-fz-span">#}
+{#                                    <span>2016</span><i></i>#}
+{#                                </div>#}
+{#                                <div class="swiper-fz-span">上海分公司成立</div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="swiper-slide">#}
+{#                        <div class="swiper-fz-year">2014-2007年</div>#}
+{#                        <div class="swiper-fz-light"></div>#}
+{#                        <div class="swiper-fz-read">#}
+{#                            <div class="swiper-fz-text">#}
+{#                                <div class="swiper-fz-span"><span>2014</span><i></i></div>#}
+{#                                <div class="swiper-fz-span">菲奥特电子德国分公司成立</div>#}
+{#                            </div><div class="swiper-fz-text">#}
+{#                                <div class="swiper-fz-span"><span>2011</span><i></i></div>#}
+{#                                <div class="swiper-fz-span">北京研发中心成立</div>#}
+{#                            </div><div class="swiper-fz-text">#}
+{#                                <div class="swiper-fz-span"><span>2009</span><i></i></div>#}
+{#                                <div class="swiper-fz-span">北京、上海、西安、深圳办事处成立</div>#}
+{#                            </div><div class="swiper-fz-text">#}
+{#                                <div class="swiper-fz-span"><span>2007</span><i></i></div>#}
+{#                                <div class="swiper-fz-span">产品通过UL、CUL、CE认证</div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="swiper-slide">#}
+{#                        <div class="swiper-fz-year">2003-2005年</div>#}
+{#                        <div class="swiper-fz-light"></div>#}
+{#                        <div class="swiper-fz-read">#}
+{#                            <div class="swiper-fz-text">#}
+{#                                <div class="swiper-fz-span"><span>2005</span><i></i></div>#}
+{#                                <div class="swiper-fz-span">菲奥特电子获得高新技术企业称号</div>#}
+{#                            </div><div class="swiper-fz-text">#}
+{#                                <div class="swiper-fz-span"><span>2004</span><i></i></div>#}
+{#                                <div class="swiper-fz-span">通过ISO9001质量管理体系认证</div>#}
+{#                            </div><div class="swiper-fz-text">#}
+{#                                <div class="swiper-fz-span"><span>2003</span><i></i></div>#}
+{#                                <div class="swiper-fz-span">菲奥特电子在山东济南成立</div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+                </div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="fz-swiper-next swiper-button-next"></div>
+            <div class="fz-swiper-prev swiper-button-prev"></div>
+        </div>
+    </div>
+</section>
+<!--发展历程结束处-->
+
+<!--公司简介开始处-->
+<!--荣誉资质开始处-->
+<section class="read-about read-about3" id="honor">
+    <div class="width-auto pd0">
+        <div class="index-title">
+            <span class="en2 text-en wow fadeInUp d2">OUR HONOR</span>
+            <span class="wow fadeInUp d3">荣誉资质</span>
+        </div>
+        <div class="honor-wrap wow fadeInUp d4">
+            <div class="swiper-container honor-about-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="honor-swiper-box">
+                            <span class="iconfont icon-gaoxinjishuqiyezhengshu"></span>
+                            <span class="space-over">国家高新技术企业证书</span>
+                            <span>持续进行研究开发与技术成果转化，形成企业核心自主知识产权</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="honor-swiper-box">
+                            <span class="iconfont icon-iso-9001"></span>
+                            <span class="space-over">ISO 9001质量管理体系认证</span>
+                            <span>公司通过ISO:9001质量管理体系认证</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="honor-swiper-box">
+                            <span class="iconfont icon-iso14000"></span>
+                            <span class="space-over">ISO14000环境管理体系认证</span>
+                            <span>公司通过ISO:14000环境管理体系认证</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="honor-swiper-box">
+                            <span class="iconfont icon-iso"></span>
+                            <span class="space-over">ISO 18000认证</span>
+                            <span>菲奥特ISO 18000认证</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="honor-swiper-box">
+                            <span class="iconfont icon-ULrenzheng"></span>
+                            <span class="space-over">UL认证</span>
+                            <span>菲奥特UL认证</span>
+                        </div>
+                    </div>
+{#                    <div class="swiper-slide">#}
+{#                        <div class="honor-swiper-box">#}
+{#                            <span class="iconfont icon-CUL"></span>#}
+{#                            <span class="space-over">CUL认证</span>#}
+{#                            <span>菲奥特CUL认证</span>#}
+{#                        </div>#}
+{#                    </div>#}
+                    <div class="swiper-slide">
+                        <div class="honor-swiper-box">
+                            <span class="iconfont icon-a-X-sensetubiaoheji_TUVrenzheng"></span>
+
+                            <span class="space-over">德国莱茵TüV检测认证</span>
+                            <span>菲奥特TUV认证</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="honor-swiper-box">
+                            <span class="iconfont icon-CQC"></span>
+                            <span class="space-over">CQC认证</span>
+                            <span>菲奥特CQC认证</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="honor-swiper-box">
+                            <span class="iconfont icon-CErenzheng"></span>
+                            <span class="space-over">CE认证</span>
+                            <span>菲奥特CE认证</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="honor-swiper-box">
+                            <span class="iconfont icon-rohs"></span>
+                            <span class="space-over">RoHS认证</span>
+                            <span>菲奥特RoHS认证</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="honor-swiper-next swiper-button-next"></div>
+            <div class="honor-swiper-prev swiper-button-prev"></div>
+        </div>
+    </div>
+</section>
+<!--荣誉资质结束处-->
+
+<!--公司简介开始处-->
+<!--企业愿景开始处-->
+<section class="read-about read-about4" id="vision">
+    <div class="about-yj-img">
+        <span class="data3" data-src="http://www.filtemc.com/uploads/img/20190626/5d1333d697006.jpg"></span>
+    </div>
+    <div class="about-yj-box">
+        <div class="width-auto wow fadeInUp d2">
+            <div class="index-title">
+                <span class="en2 text-en">MISSION AND VISION</span>
+                <span>使命与愿景</span>
+            </div>
+            <div class="about-yj-text">
+                {% for company in companys %}
+                 {{ company.missionvision }}
+                {% endfor %}
+            </div>
+{#            <div class="about-yj-text2">#}
+{#                培养更多的电磁兼容人才，服务更多的行业和地区。<br/>#}
+{#成为电磁兼容领域技术、产品、服务更具竞争力的企业。#}
+{#            </div>#}
+        </div>
+    </div>
+</section>
+<!--企业愿景结束处--><!--回到顶部-->
+<section class="return-top" id="top"></section>
+{% endblock %}

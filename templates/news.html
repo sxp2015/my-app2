@@ -1,0 +1,71 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<script type="text/javascript">
+    $(function() {
+        $("#news").addClass('header-hover')
+    })
+</script>
+
+<!--banner-->
+<section class="read-banner-wrap header-top">
+    <div class="read-banner-img data1" data-src="http://www.filtemc.com/uploads/img/20190626/5d12de322bcb1.jpg"></div>
+    <div class="read-banner-text">
+        <div class="width-auto">
+            <span class="en2 text-en wow fadeInLeft2 d2">NEWS</span>
+            <span class="wow fadeInLeft2 d3">新闻动态</span>
+        </div>
+    </div>
+</section>
+<div class="read-nav-box">
+    <section class="read-nav wow fadeInUp d2">
+        <div class="width-auto">
+            <ul>
+                <li><a  href="#">公司新闻</a></li><li><a  href="#">行业新闻</a></li>
+            </ul>
+        </div>
+    </section>
+</div>
+<div class="news-list-wrap">
+    <div class="width-auto">
+        <div class="news-list-box">
+            {% for new in news %}
+            <div class="news-list-li wow fadeInUp d2">
+                <div class="news-list-left">
+                    <a href="#" class="data3" data-src="{{ new.img.url }}"></a>
+                </div>
+                <div class="news-list-right">
+                    <div class="news-list-span">
+                        <span>{{ new.newType }}/</span><span>{{ new.publishDate | date:"Y-m-d" }}</span>
+                    </div>
+                    <div class="news-list-span space-over">
+                        <a class="space-over" href="#">{{ new.title }}</a>
+                    </div>
+                    <div class="news-list-span">
+                        {{ new.content }}
+                    </div>
+                    <div class="news-list-span en1">
+                        <a href="#">Read More &gt;&gt;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-wrap2 wow fadeInUp d2"></div>
+            {% endfor %}
+        </div>
+{#        <div class="page-lable-wrap wow fadeInUp d2">#}
+{#            <span class="page-hover">#}
+{#              <a  href="javascript:void(0);">1</a>#}
+{#            </span>#}
+{#            <span ><a href="news/p/2.html">2</a></span>#}
+{#            <span class="m-show"><a href="news/p/2.html">下一页</a></span>#}
+{#            <span><a href="news/p/2.html">末页</a></span>#}
+{#            <span><a href="javascript:void(0);">共2页/18条</a></span>#}
+{#        </div>#}
+    </div>
+</div>
+<!--回到顶部-->
+<section class="return-top" id="top"></section>
+
+{% endblock %}

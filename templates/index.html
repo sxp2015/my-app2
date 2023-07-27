@@ -1,0 +1,364 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<script type="text/javascript">
+    $(function() {
+        IqwXiongJs.numberRoll();
+        $("#home").addClass('header-hover')
+    })
+</script>
+<!--banner-->
+<section class="banner-wrap header-top">
+    <div class="swiper-container banner-box">
+        <div class="swiper-wrapper">
+
+            {% for banner in banners %}
+            <div class="swiper-slide">
+                <div class="banner-img data1" data-src="{{ banner.photo0.url }}"></div>
+                <div class="swiper-text-box swiper-text-box1">
+                    <div class="width-auto">
+                        <div class="banner-max swiper-animation">{{ banner.description }}</div>
+{#								<div class="banner-min en1 swiper-animation">{{ banner.description }}</div>#}
+                        <div class="banner-button clear swiper-animation">
+                            <a href="javascript:void(0);">
+                                <div class="button-left">Explore More</div>
+                                <div class="button-right"><span></span></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+<!--四大优势-->
+<section class="advantage-wrap">
+    <div class="width-auto pd0">
+        <div class="advantage-ul">
+            <div class="advantage-li">
+                <a href="#">
+                    <div class="advantage-light">
+                        <div class="advantage-box">
+                            <div class="advantage-left">
+                                <span class="iconfont icon-diancifa"></span>
+                            </div>
+                            <div class="advantage-right">
+                                <span class="space-over">EMC服务项目</span>
+                                <span>电源谐波抑制问题&nbsp;·&nbsp;静电放电抗扰度试验&nbsp;·&nbsp;辐射发射超标试验</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="advantage-li">
+                <a href="#">
+                    <div class="advantage-light">
+                        <div class="advantage-box">
+                            <div class="advantage-left">
+                                <span class="iconfont icon-tongbu">
+
+                                </span>
+                            </div>
+                            <div class="advantage-right">
+                                <span class="space-over">EMC同步研发服务</span>
+                                <span>新产品在研发之初就充分考虑电磁兼容的设计</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="advantage-li">
+                <a href="#">
+                    <div class="advantage-light">
+                        <div class="advantage-box">
+                            <div class="advantage-left">
+                                <span class="iconfont icon-zhenduan">
+                                </span>
+                            </div>
+                            <div class="advantage-right">
+                                <span class="space-over">EMC诊断和评估</span>
+                                <span>对产品现状进行传导和辐射预测，在此基础上对产品诊断</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="advantage-li">
+                <a href="#">
+                    <div class="advantage-light">
+                        <div class="advantage-box">
+                            <div class="advantage-left">
+                                <span class="iconfont icon-piliang"></span>
+                            </div>
+                            <div class="advantage-right">
+                                <span class="space-over">EMC整改和解决</span>
+                                <span>跟踪客户第三方测试结果，确保客户顺利通过认证实验</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--关于-->
+<section class="about-index-wrap">
+    <div class="width-auto">
+        <div class="index-title">
+            <span class="en2 text-en wow fadeInUp d2">ABOUT US</span>
+            <span class="wow fadeInUp d3">关于我们</span>
+        </div>
+        <div class="about-index-box wow fadeInUp d3">
+            <div class="about-index-text">
+                {% for company in companys %}
+                    {{ company.description }}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="about-index-number data-number wow fadeInUp d4">
+            <div class="index-number-li">
+                <div class="index-number-text">
+                    <span id="number1" data-num="18">18</span>
+                    <span>+</span>
+                </div>
+                <div class="index-number-text">
+                    拥有18年多的专业经验 </div>
+                <span class="index-number-light"><i></i></span>
+            </div>
+            <div class="index-number-li">
+                <div class="index-number-text">
+                    <span id="number2" data-num="1000">1000</span>
+                    <span>+</span>
+                </div>
+                <div class="index-number-text">
+                    超过1000件电磁兼容成功案例 </div>
+                <span class="index-number-light"><i></i></span>
+            </div>
+            <div class="index-number-li">
+                <div class="index-number-text">
+                    <span id="number3" data-num="2000">2000</span>
+                    <span>+</span>
+                </div>
+                <div class="index-number-text">
+                    涉及14大类超过2000多种定制型产品 </div>
+                <span class="index-number-light"><i></i></span>
+            </div>
+        </div>
+        <div class="about-index-button wow fadeInUp d5"><a href="{% url 'about' %}"><span>查看更多</span><i></i></a>
+        </div>
+    </div>
+
+</section>
+<div class="border-wrap wow fadeInUp d2"></div>
+<!--产品-->
+<section class="product-index-wrap">
+    <div class="index-title">
+        <span class="en2 text-en wow fadeInUp d2">PRODUCT CENTER</span>
+        <span class="wow fadeInUp d3">产品中心</span>
+    </div>
+    <div class="product-index-list">
+        {% for categ in category %}
+        <div class="product-index-li wow fadeInUp">
+            <a href="{% url 'productsApp:product' %}">
+                <div class="product-index-img data3" data-src="{{ categ.img.url }}"></div>
+                <div class="product-index-read">
+                    <div class="product-index-box">
+                        <div class="product-index-title space-over">{{ categ.name }}</div>
+                        <div class="product-index-text">
+                            {{ categ.desc }}
+                        </div>
+                        <div class="product-index-button"><span class="iconfont icon-cirl"></span></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<!--新闻-->
+<section class="news-index-wrap">
+    <div class="index-title">
+        <span class="en2 text-en wow fadeInUp d2">LATEST NEWS</span>
+        <span class="wow fadeInUp d3">新闻动态</span>
+    </div>
+    <div class="width-auto">
+        <div class="news-index-box">
+            {% for new0 in news %}
+                {% if forloop.counter == 1 %}
+                <div class="news-index-top wow fadeInUp d2">
+                    <div class="news-top-img">
+                        <a href="#" class="data3"
+                            data-src="{{ new0.img.url }}"></a>
+                    </div>
+                    <div class="news-top-title"><a class="space-over" href="#">{{ new0.title }}</a>
+                    </div>
+                    <div class="news-top-text">
+                        {{ new0.content|truncatechars:40 }}
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+            <div class="news-index-bottom">
+                {% for new1 in news %}
+                    {% if forloop.counter > 1 %}
+                        <div class="news-index-li wow fadeInUp">
+                            <div class="news-li-left">
+                                <span>{{ new1.publishDate | date:"d" }}</span>
+                                <span>{{ new1.publishDate | date:"Y-m" }}</span>
+                            </div>
+                            <div class="news-li-right">
+                                <span><a class="space-over" href="news/113.html">{{ new1.title }}</a></span>
+                                <span>
+                                    {{ new1.content|truncatechars:40 }}
+                                </span>
+                                <span class="iconfont icon-jiantou-xia"> </span>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+{#                <div class="news-index-li wow fadeInUp">#}
+{#                    <div class="news-li-left">#}
+{#                        <span>31</span>#}
+{#                        <span>2020-07</span>#}
+{#                    </div>#}
+{#                    <div class="news-li-right">#}
+{#                        <span><a class="space-over" href="news/112.html">微信公众号升级通知</a></span>#}
+{#                        <span>济南菲奥特电子设备有限公司公众号全新升级，集技术咨询、售前服务、售后和物流查询、产品真伪识别于一体，7*24在线服务，为您提供及时准确的服务支持，有效的产品咨询沟通和便捷的订单物流咨询服务。</span>#}
+{#                        <span class="iconfont icon-jiantou-xia"></span>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="news-index-li wow fadeInUp">#}
+{#                    <div class="news-li-left">#}
+{#                        <span>16</span>#}
+{#                        <span>2019-12</span>#}
+{#                    </div>#}
+{#                    <div class="news-li-right">#}
+{#                        <span><a class="space-over" href="news/111.html">济南菲奥特打假声明</a></span>#}
+{#                        <span></span>#}
+{#                        <span class="iconfont icon-jiantou-xia"></span>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+
+{#            {% endfor%}#}
+        </div>
+
+</section>
+{#<section class="advert-index-wrap">#}
+{#    <div class="advert-img">#}
+{#        <span class="data3 wow fadeInUp d2" data-src="uploads/img/20190627/5d14404d3aa71.png"></span>#}
+{#    </div>#}
+{#    <div class="advert-index-box">#}
+{#        <div class="advert-title wow fadeInUp d3">为客户提供满意的技术解决方案</div>#}
+{#        <div class="advert-text wow fadeInUp d4">保证快速灵活的产品交期，秉承直至客户满意为止并且始终如一的服务态度</div>#}
+{#        <div class="advert-button wow fadeInUp d5"><a href="{% url 'contact' %}">联系我们<i></i></a></div>#}
+{#    </div>#}
+{#</section>#}
+<!--
+<div class="xgai_video" id="xgai_video">
+<div class="indDiv">
+<video src="/Public/Home/default/images/guoqin.mp4" poster="/Public/Home/default/images/guoqin.jpg" class="pc_video" id="pc_video" muted></video>
+<video src="/Public/Home/default/images/guoqin.mp4" poster="/Public/Home/default/images/guoqin.jpg" controls class="wap_video" id="wap_video" muted></video>
+</div>
+</div>
+-->
+<style>
+    .xgai_video {
+        background: #000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99999999;
+    }
+
+    .xgai_video .indDiv {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    @media screen and (min-width:1201px) {
+        .xgai_video .pc_video {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .xgai_video .wap_video {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width:1200px) {
+        .xgai_video .pc_video {
+            display: none;
+        }
+
+        .xgai_video .wap_video {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+</style>
+<script>
+    $(function() {
+        var $pc_video = $('#pc_video'),
+            $wap_video = $('#wap_video'),
+            $window = $(window),
+            $xgai_video = $('#xgai_video'),
+            ios_is_ended = false;
+        if ($window.width() > 1200) {
+            $pc_video.prop('autoplay', true);
+            $pc_video.on('ended', function(_e) {
+                var e = _e.originalEvent;
+                $xgai_video.fadeOut(500);
+            });
+        } else {
+            $wap_video.on('ended', function(_e) {
+                var e = _e.originalEvent;
+                $xgai_video.fadeOut(500);
+                ios_is_ended = true;
+            });
+            $(document.body).on('click touchstart', '*', function() {
+                /*为了兼容苹果手机，苹果手机不支持ended事件*/
+                console.log('触发1');
+                setTimeout(function() {
+                    if (!ios_is_ended) {
+                        $xgai_video.fadeOut(500);
+                        ios_is_ended = true;
+                    }
+                }, 10000);
+            });
+            $wap_video.get(0).addEventListener('play', function() {
+                /*为了兼容苹果手机，苹果手机不支持ended事件*/
+                console.log('触发2');
+                setTimeout(function() {
+                    if (!ios_is_ended) {
+                        $xgai_video.fadeOut(500);
+                        ios_is_ended = true;
+                    }
+                }, 10000);
+            });
+
+
+
+        }
+
+
+
+    });
+</script>
+<!--回到顶部-->
+<section class="return-top" id="top"></section>
+{% endblock %}

@@ -1,0 +1,137 @@
+@font-face {font-family: "iconfont";
+  src: url('../fonts/iconfont.eot'); /* IE9 */
+  src: url('../fonts/iconfont.eot') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/738f2873a3914e70ac15217bb3e5383f.woff') format('woff2'),
+  url('../fonts/iconfont.woff') format('woff'),
+  url('../fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('../fonts/iconfont.svg') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-dianhua:before {
+  content: "\e614";
+}
+
+.icon-iso14000:before {
+  content: "\e6c8";
+}
+
+.icon-youxiang:before {
+  content: "\e607";
+}
+
+.icon-weixin:before {
+  content: "\e621";
+}
+
+.icon-shangpinleibie-copy:before {
+  content: "\e635";
+}
+
+.icon-jiejuefangan:before {
+  content: "\e631";
+}
+
+.icon-skype:before {
+  content: "\e8a5";
+}
+
+.icon-diancifa:before {
+  content: "\e627";
+}
+
+.icon-jiantou:before {
+  content: "\e65b";
+}
+
+.icon-wangzhan:before {
+  content: "\e60c";
+}
+
+.icon-QQ:before {
+  content: "\e78c";
+}
+
+.icon-gaoxinjishu:before {
+  content: "\e612";
+}
+
+.icon-piliang:before {
+  content: "\e683";
+}
+
+.icon-dizhi:before {
+  content: "\e626";
+}
+
+.icon-jiantou-xia:before {
+  content: "\e602";
+}
+
+.icon-zhenduan:before {
+  content: "\e7b9";
+}
+
+.icon-cirl:before {
+  content: "\e601";
+}
+
+.icon-youjian:before {
+  content: "\e600";
+}
+
+.icon-sousuo1:before {
+  content: "\e904";
+}
+
+.icon-shanghai:before {
+  content: "\e68e";
+}
+
+.icon-tongbu:before {
+  content: "\e692";
+}
+
+.icon-isoicon:before {
+  content: "\e620";
+}
+
+.icon-weibiaoti-:before {
+  content: "\e605";
+}
+
+.icon-ULrenzheng:before {
+  content: "\e608";
+}
+
+.icon-culus:before {
+  content: "\e609";
+}
+
+.icon-ce:before {
+  content: "\e60a";
+}
+
+.icon-rohs:before {
+  content: "\e60b";
+}
+
+.icon-cqc:before {
+  content: "\e60d";
+}
+
+.icon-iso:before {
+  content: "\e60e";
+}
+
+.icon-CUL:before {
+  content: "\e6e8";
+}
+

@@ -1,0 +1,248 @@
+*{-moz-box-sizing:border-box;box-sizing:border-box;}
+
+body {font-size:16px;}
+
+html {font-size: 100%;}
+
+#wrapper{ /* height:100%; */}
+
+html,body{ position:relative; height:100%;}
+
+
+
+body{padding:0px ;margin:0; font-size:12px; background:#e9e9e9; position:relative; overflow-x:hidden;/*font-family:"Microsoft YaHei";*/font-family: "Microsoft YaHei UI Light,Microsoft YaHei";}
+
+a,p,dl,dt,dd,ul,li,h2,h1,h3,h4,h5,h6,table,tr,td,form,iframe,font,em,i{ font-weight:normal;word-break: normal;word-wrap: break-word;  font-style:normal; padding:0px ;margin:0;text-decoration:none;outline:none;-moz-outline:none; font-family: "Microsoft YaHei UI Light";}
+
+a:focus{outline-style:none; -moz-outline-style: none;}
+
+a:hover{ text-decoration:none;}
+
+p{word-break: normal;word-wrap: break-word; }
+
+img{ max-width:100%;}
+
+li{ list-style:none; text-decoration:none;}
+
+input {outline: none;text-decoration:none;-ms-outline:none; }
+
+textarea {outline: none;text-decoration:none;}
+
+select{outline: none;text-decoration:none;}
+
+/*input:focus{ border:1px solid #9c9f58;}*/
+
+
+
+.clearfix:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+
+.clearfix {zoom:1;}	
+
+a{text-decoration:none;}
+
+button {
+
+	margin:0;
+
+	padding:0;
+
+	color:inherit;
+
+	font-family:inherit;
+
+	font-size:inherit;
+
+	background:0 0;
+
+	border:none;
+
+	border-radius:none;
+
+	box-shadow:none;
+
+	-webkit-appearance:none;
+
+	-moz-appearance:none;
+
+	appearance:none;
+
+	outline:0;
+
+	cursor:pointer
+
+}
+
+
+
+@media(max-width:414px){
+
+table{font-size:14px;line-height:18px;display: block;}
+
+tr { width: 100%; border-right: none; background: transparent; float: left; }
+
+thead { display: none; }
+
+td { border: 0;}
+
+td,tbody { display: block; width: 100% !important;}
+
+	
+
+}
+@font-face {
+  font-family: "GOTHIC_0";
+  src: url("GOTHIC_0.woff2") format("woff2"),
+       url("GOTHIC_0.woff") format("woff"),
+       url("GOTHIC_0.ttf") format("truetype"),
+       url("GOTHIC_0.eot") format("embedded-opentype"),
+       url("GOTHIC_0.svg") format("svg");
+}
+@font-face {
+  font-family: "GOTHICB_0";
+  src: url("GOTHICB_0.woff2") format("woff2"),
+       url("GOTHICB_0.woff") format("woff"),
+       url("GOTHICB_0.ttf") format("truetype"),
+       url("GOTHICB_0.eot") format("embedded-opentype"),
+       url("GOTHICB_0.svg") format("svg");
+}
+/*思源黑体 正文*/
+
+@font-face {
+
+  font-family: "Microsoft YaHei UI Light";
+
+  src: url("Microsoft YaHei UI Light.woff2") format("woff2"),
+
+       url("Microsoft YaHei UI Light.woff") format("woff"),
+
+       url("Microsoft YaHei UI Light.ttf") format("truetype"),
+
+       url("Microsoft YaHei UI Light.eot") format("embedded-opentype"),
+
+       url("Microsoft YaHei UI Light.svg") format("svg"),
+
+       url("Microsoft YaHei UI Light.otf") format("opentype");
+
+}
+
+
+
+
+
+
+@font-face {
+
+  font-family: "PINGFANG LIGHT";
+
+  src: url("PINGFANG LIGHT.woff2") format("woff2"),
+
+       url("PINGFANG LIGHT.woff") format("woff"),
+
+       url("PINGFANG LIGHT.ttf") format("truetype"),
+
+       url("PINGFANG LIGHT.eot") format("embedded-opentype"),
+
+       url("PINGFANG LIGHT.svg") format("svg"),
+
+       url("PINGFANG LIGHT.otf") format("opentype");
+
+}
+
+
+
+
+
+.wbk::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+
+color: #999999; 
+
+} 
+
+.wbk:-moz-placeholder, textarea:-moz-placeholder { 
+
+color: #999999; 
+
+} 
+
+.wbk::-moz-placeholder, textarea::-moz-placeholder { 
+
+color: #999999; 
+
+} 
+
+.wbk:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+
+color: #999999; 
+
+} 
+
+
+
+.wbk1::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+
+color: #666666; 
+
+} 
+
+.wbk1:-moz-placeholder, textarea:-moz-placeholder { 
+
+color: #666666; 
+
+} 
+
+.wbk1::-moz-placeholder, textarea::-moz-placeholder { 
+
+color: #666666; 
+
+} 
+
+.wbk1:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+
+color: #666666; 
+
+} 
+
+
+
+
+
+@keyframes shake1 {
+
+  0%, 100% {
+
+    -webkit-transform: translateY(0px);
+
+    -ms-transform: translateY(0px);
+
+    transform: translateY(0px);
+
+  }
+
+
+
+  10%, 30%, 50%, 70%, 90% {
+
+    -webkit-transform: translateY(-10px);
+
+    -ms-transform: translateY(-10px);
+
+    transform: translateY(-10px);
+
+  }
+
+
+
+  20%, 40%, 60%, 80% {
+
+    -webkit-transform: translateY(0px);
+
+    -ms-transform: translateY(0px);
+
+    transform: translateY(0px);
+
+  }
+
+}
+
+
+
